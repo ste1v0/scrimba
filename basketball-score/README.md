@@ -1,4 +1,4 @@
-# co26a4a91b5244b49570b413a
+# Basketball Score Project
 
 Quick start:
 
