@@ -34,7 +34,7 @@ function displayTwoPlusThree() {
     displayTwo.textContent = guest
 }
 
-function resetScores() {
+function resetScore() {
     home = 0
     guest = 0
     displayOne.textContent = home
