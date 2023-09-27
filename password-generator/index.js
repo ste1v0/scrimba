@@ -9,13 +9,13 @@ let passwordTwo = document.querySelector("#passwordTwo")
 
 function generate() {
     let firstPassword = ''
-    for (i = 0; i < 12; i++) {
+    for (i = 0; i < 15; i++) {
         firstPassword += characters[Math.floor(Math.random() * characters.length)]
     }
     passwordOne.textContent = firstPassword
 
     let secondPassword = ''
-    for (i = 0; i < 12; i++) {
+    for (i = 0; i < 15; i++) {
         secondPassword += characters[Math.floor(Math.random() * characters.length)]
     }
     passwordTwo.textContent = secondPassword
