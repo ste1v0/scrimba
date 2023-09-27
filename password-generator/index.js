@@ -4,8 +4,8 @@ const characters = 
 
 // console.log(characters.length)
 
-let passwordOne = document.querySelector(".passwordOne")
-let passwordTwo = document.querySelector(".passwordTwo")
+let passwordOne = document.querySelector("#passwordOne")
+let passwordTwo = document.querySelector("#passwordTwo")
 
 function generate() {
     let firstPassword = ''
@@ -13,7 +13,7 @@ function generate() {
         firstPassword += characters[Math.floor(Math.random() * characters.length)]
     }
     passwordOne.textContent = firstPassword
-    
+
     let secondPassword = ''
     for (i = 0; i < 12; i++) {
         secondPassword += characters[Math.floor(Math.random() * characters.length)]
