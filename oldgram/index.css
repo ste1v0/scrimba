@@ -66,6 +66,10 @@ hr {
     width: 25px;
 }
 
+.icon:hover {
+    border-bottom: 2px dotted palevioletred;
+}
+
 .counter {
     font-size: 13px;
     font-weight: 700;
