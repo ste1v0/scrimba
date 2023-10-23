@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: 'Smythe';
+    font-weight: 400;
+}
+
+h1 {
+    margin: 0;
+    font-size: 39px;
+    padding-top: 46px;
+    padding-left: 46px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 22px;
+    padding-left: 46px;
+    padding-bottom: 70px;
+    line-height: 14px;
+}
+
+#container {
+    margin: 0 auto;
+    width: 600px;
+}
+
+header {
+    background: url("img/burger.jpeg");
+    background-position: center;
+    width: 100%;
+    color: whitesmoke;
+}
+
+#order {
+    padding: 0 45px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin: 50px 45px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #8B8B8B;
+}
+
+.item-flex-block {
+    display: flex;
+    flex-direction: column;
+    margin-left: 31px;
+    gap: 8px;
+}
+
+.item-title {
+    font-size: 28px;
+    line-height: 17px;
+}
+
+.item-ingredients {
+    font-size: 16px;
+    line-height: 24px;
+    color: #8B8B8B;
+}
+
+.item-price {
+    font-size: 20px;    
+    line-height: 24px;
+}
+
+.add-button {
+    margin-left: auto;
+    border: 1px solid #8B8B8B;
+    border-radius: 50%;
+    font-family: 'Inter';
+    font-weight: 200;
+    font-size: 32px;
+    line-height: 24px;
+    padding: 13px 15px;
+}
+
+.emoji {
+    margin: 0;
+    line-height: 98px;
+    font-size: 79px;
+}
+
+.order-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 17px;
+    margin-right: 10px;
+}
+
+.order-item {
+    display: flex;
+    margin: 15px 0;
+}
+
+.separator-line {
+    height: 2px; 
+    background: black;
+    border: none;
+}
+
+.order-item-name {
+    
+}
+
+.order-item-price {
+    margin-left: auto;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.complete-order {
+    display: block;
+    border: 0px;
+    padding: 18px;
+    margin: 0 auto;
+    width: 100%;
+    background: #16DB99;
+    color: whitesmoke;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: Verdana;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.remove-item {
+    font-size: 12px;
+    font-family: Verdana;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+    color: #BBBBBB;
+    text-align: center;
+}
+
+.total-price {
+    font-size: 28px;    
+    line-height: 24px;
+    margin-bottom: 50px;
+}
