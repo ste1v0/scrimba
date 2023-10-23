@@ -143,3 +143,46 @@ header {
     line-height: 24px;
     margin-bottom: 50px;
 }
+
+.payment-container {
+    position: absolute;
+    background: whitesmoke;
+    top: 50%;
+    left: 15%;
+    right: 15%;
+}
+
+.payment-items {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 23px;
+}
+
+input {
+    padding: 15px 
+}
+
+.payment-title {
+    text-align: center;
+    font-size: 24px;
+    font-family: Verdana;
+    font-weight: 700;
+    line-height: 31px;
+}
+
+.payment-btn {
+    display: block;
+    border: 0px;
+    padding: 18px;
+    margin: 0 auto;
+    width: 100%;
+    background: #16DB99;
+    color: whitesmoke;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: Verdana;
+    font-weight: 700;
+    line-height: 24px;
+    margin-top: 10px;
+}

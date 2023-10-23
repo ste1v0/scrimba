@@ -1,5 +1,6 @@
-import { menuArray } from './data.js'
+import { menuArray } from '/data'
 
+const container = document.getElementById('container')
 const menu = document.getElementById('menu')
 const order = document.getElementById('order')
 const addButton = document.getElementById('add-button')
@@ -74,6 +75,54 @@ document.addEventListener("click", function(event) {
             orderItemsArr.splice(index, 1)
         }
         render(orderItemsArr)
+    }
+})
+
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains('complete-order')) {
+        const paymentContainer = document.createElement('div')
+        paymentContainer.classList.add('payment-container')
+        container.append(paymentContainer)
+        
+        const paymentItems = document.createElement('div')
+        paymentItems.classList.add('payment-items')
+        paymentContainer.append(paymentItems)
+        
+        const paymentTitle = document.createElement('div')
+        paymentTitle.classList.add('payment-title')
+        paymentTitle.textContent = 'Enter card details'
+        paymentItems.append(paymentTitle)
+        
+        const inputName = document.createElement('input')
+        inputName.classList.add('input-name')
+        inputName.placeholder = 'Enter your name'
+        paymentItems.append(inputName)
+        
+        const inputCard = document.createElement('input')
+        inputCard.classList.add('input-card')
+        inputCard.placeholder = 'Enter card number'
+        paymentItems.append(inputCard)
+        
+        const inputCVV = document.createElement('input')
+        inputCVV.classList.add('input-cvv')
+        inputCVV.type = 'password'
+        inputCVV.placeholder = 'Enter CVV'
+        paymentItems.append(inputCVV)
+        
+        const paymentBtn = document.createElement('button')
+        paymentBtn.classList.add('payment-btn')
+        paymentBtn.textContent = 'Pay'
+        paymentItems.append(paymentBtn)
+        
+        
+        
+        
+        // result = `<h3>Enter card details</h3>
+        // <input type="text" placeholder="Enter your name"></input>
+        // <input type="text" placeholder="Enter card number"></input>
+        // <input type="password" placeholder="Enter CVV"></input>
+        // `
+        
     }
 })
         
