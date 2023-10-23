@@ -4,8 +4,10 @@ const container = document.getElementById('container')
 const menu = document.getElementById('menu')
 const order = document.getElementById('order')
 const addButton = document.getElementById('add-button')
-let displayOrderDetails = false
+
+let displayPaymentForm = false
 let orderItemsArr = []
+let paymentContainer = null
 
 function showMenu(data) {
     let result = ``
@@ -23,26 +25,94 @@ function showMenu(data) {
     menu.innerHTML = result
 }
 
+function createPaymentContainer() {
+    paymentContainer = document.createElement('div')
+    paymentContainer.classList.add('payment-container')
+    container.append(paymentContainer)
+        
+    const paymentItems = document.createElement('div')
+    paymentItems.classList.add('payment-items')
+    paymentContainer.append(paymentItems)
+        
+    const paymentTitle = document.createElement('div')
+    paymentTitle.classList.add('payment-title')
+    paymentTitle.textContent = 'Enter card details'
+    paymentItems.append(paymentTitle)
+    
+    const paymentForm = document.createElement('form')
+    paymentForm.classList.add('payment-form')
+    paymentItems.append(paymentForm)
+        
+    const inputName = document.createElement('input')
+    inputName.classList.add('input-name')
+    inputName.placeholder = 'Enter your name'
+    inputName.required = true
+    paymentForm.append(inputName)
+        
+    const inputCard = document.createElement('input')
+    inputCard.classList.add('input-card')
+    inputCard.placeholder = 'Enter card number'
+    inputCard.required = true
+    paymentForm.append(inputCard)
+        
+    const inputCVV = document.createElement('input')
+    inputCVV.classList.add('input-cvv')
+    inputCVV.type = 'password'
+    inputCVV.placeholder = 'Enter CVV'
+    inputCVV.required = true
+    paymentForm.append(inputCVV)
+        
+    const paymentBtn = document.createElement('button')
+    paymentBtn.classList.add('payment-btn')
+    paymentBtn.textContent = 'Pay'
+    paymentForm.append(paymentBtn)
+}
+
 document.addEventListener("click", function(event) {
-    const id = event.target.getAttribute('data-id')
+    
+    // Add item
     if (event.target.classList.contains('add-button')) {
-        displayOrderDetails = true
+        const id = event.target.getAttribute('data-id')
         const menuItem = menuArray.find(e => e.id === +id)
         orderItemsArr.push(menuItem)
-        console.log(orderItemsArr)
+        render(orderItemsArr)
         
-        if (displayOrderDetails) {
-            render(orderItemsArr)
+    // Remove item
+    } else if (event.target.classList.contains('remove-item')) {
+        const index = event.target.getAttribute('data-index')
+        if (index !== -1) {
+            parseInt(orderItemsArr.splice(index, 1))
         }
+        render(orderItemsArr)
+        
+    // Complete order 
+    } else if (event.target.classList.contains('complete-order')) {
+        displayPaymentForm = true
+        if (paymentContainer) {
+            paymentContainer.classList.remove('hidden')
+        } else {
+            createPaymentContainer()
+        }
+        render(orderItemsArr)
     }
 })
 
-function render(orderItemsArr) {
+document.addEventListener("submit", function(event) {
+        const inputValue = document.querySelector('.input-name').value
+        displayPaymentForm = false
+        orderItemsArr = []
+        paymentContainer.classList.add('hidden')
+        render(orderItemsArr, inputValue)
+        
+    event.preventDefault()
+})
+
+function render(orderItemsArr, inputValue) {
     
     let result = ``
     
     if (orderItemsArr.length === 0) {
-        result = ``
+        result = `<div class="order-sent">Thanks, ${inputValue}! Your order is on its way</div>`
     } else {
     
     result = `<h2 class="order-title">Your order</h2>`
@@ -51,7 +121,7 @@ function render(orderItemsArr) {
         result += `
             <div class="order-item">
                 <div class="order-title">${e.name}</div> 
-                <div class="remove-item" data-id="${e.id}" data-index="${index}">remove</span></div>
+                <div class="remove-item" data-id="${e.id}" data-index="${index}">remove</div>
                 <div class="order-item-price">$${e.price}</div>
             </div>`
         )
@@ -65,65 +135,6 @@ function render(orderItemsArr) {
     }  
     
     order.innerHTML = result
-    
 }
-
-document.addEventListener("click", function(event) {
-    if (event.target.classList.contains('remove-item')) {
-        const index = event.target.getAttribute('data-index')
-        if (index !== -1) {
-            orderItemsArr.splice(index, 1)
-        }
-        render(orderItemsArr)
-    }
-})
-
-document.addEventListener("click", function(event) {
-    if (event.target.classList.contains('complete-order')) {
-        const paymentContainer = document.createElement('div')
-        paymentContainer.classList.add('payment-container')
-        container.append(paymentContainer)
-        
-        const paymentItems = document.createElement('div')
-        paymentItems.classList.add('payment-items')
-        paymentContainer.append(paymentItems)
-        
-        const paymentTitle = document.createElement('div')
-        paymentTitle.classList.add('payment-title')
-        paymentTitle.textContent = 'Enter card details'
-        paymentItems.append(paymentTitle)
-        
-        const inputName = document.createElement('input')
-        inputName.classList.add('input-name')
-        inputName.placeholder = 'Enter your name'
-        paymentItems.append(inputName)
-        
-        const inputCard = document.createElement('input')
-        inputCard.classList.add('input-card')
-        inputCard.placeholder = 'Enter card number'
-        paymentItems.append(inputCard)
-        
-        const inputCVV = document.createElement('input')
-        inputCVV.classList.add('input-cvv')
-        inputCVV.type = 'password'
-        inputCVV.placeholder = 'Enter CVV'
-        paymentItems.append(inputCVV)
-        
-        const paymentBtn = document.createElement('button')
-        paymentBtn.classList.add('payment-btn')
-        paymentBtn.textContent = 'Pay'
-        paymentItems.append(paymentBtn)
-        
-        
-        
-        
-        // result = `<h3>Enter card details</h3>
-        // <input type="text" placeholder="Enter your name"></input>
-        // <input type="text" placeholder="Enter card number"></input>
-        // <input type="password" placeholder="Enter CVV"></input>
-        // `
-        
-    }
-})
         
 showMenu(menuArray)
