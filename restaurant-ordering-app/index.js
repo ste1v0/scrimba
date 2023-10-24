@@ -9,8 +9,9 @@ let orderItemsArr = []
 let paymentContainer = null
 
 function showMenu(data) {
-    let result = data.forEach(e => 
-            `<div class="menu-item">
+    let result = ``
+     data.forEach(e => 
+           result += `<div class="menu-item">
             <p class="emoji">${e.emoji}</p>
             <div class="item-flex-block">
                 <div class="item-title">${e.name}</div>
@@ -19,7 +20,7 @@ function showMenu(data) {
             </div>
             <div class="add-button" data-id="${e.id}">+</div>
         </div>`
-        ).join('')
+        )
     menu.innerHTML = result
 }
 
