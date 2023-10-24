@@ -3,7 +3,6 @@ import { menuArray } from './data.js'
 const container = document.getElementById('container')
 const menu = document.getElementById('menu')
 const order = document.getElementById('order')
-const addButton = document.getElementById('add-button')
 
 let displayPaymentForm = false
 let orderItemsArr = []
@@ -11,7 +10,7 @@ let paymentContainer = null
 
 function showMenu(data) {
     let result = ``
-    data.map(e => 
+    data.forEach(e => 
         result += `<div class="menu-item">
             <p class="emoji">${e.emoji}</p>
             <div class="item-flex-block">
@@ -24,6 +23,8 @@ function showMenu(data) {
         )
     menu.innerHTML = result
 }
+
+// Payment Container
 
 function createPaymentContainer() {
     paymentContainer = document.createElement('div')
@@ -68,6 +69,8 @@ function createPaymentContainer() {
     paymentForm.append(paymentBtn)
 }
 
+// Document clicks
+
 document.addEventListener("click", function(event) {
     
     // Add item
@@ -97,6 +100,8 @@ document.addEventListener("click", function(event) {
     }
 })
 
+// Submit button
+
 document.addEventListener("submit", function(event) {
         const inputValue = document.querySelector('.input-name').value
         displayPaymentForm = false
@@ -106,6 +111,8 @@ document.addEventListener("submit", function(event) {
         
     event.preventDefault()
 })
+
+// Render order details
 
 function render(orderItemsArr, inputValue) {
     
@@ -117,7 +124,7 @@ function render(orderItemsArr, inputValue) {
     
     result = `<h2 class="order-title">Your order</h2>`
     
-        orderItemsArr.map((e, index) => 
+        orderItemsArr.forEach((e, index) => 
         result += `
             <div class="order-item">
                 <div class="order-title">${e.name}</div> 
