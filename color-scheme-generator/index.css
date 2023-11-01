@@ -1,0 +1,76 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #2B283A;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 550px;
+    margin: 0 auto;
+    background: whitesmoke;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    padding: 24px 14px;
+}
+
+input {
+    width: 60px;
+    height: 45px;
+    border: 0.5px solid #D1D5DB;
+    background: #E5E5E5;
+}
+
+button,
+select {
+    font-family: inherit;
+}
+
+select {
+    width: 262px;
+    padding: 9px 13px;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid #D1D5DB;
+    color: #111827;
+}
+
+button {
+    padding: 13px 11px;
+    border-radius: 4px;
+    border: none;
+    background: #FFF;
+    border: 1px solid #D1D5DB;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #374151;
+}
+
+.clr {
+    grid-area: 'clr';
+}
+
+#grid {
+    display: grid;
+    grid-template-rows: 450px 45px;
+    grid-template-columns: 110px 110px 110px 110px 110px;
+    grid-template-areas: "clr clr clr clr clr"
+    "hex hex hex hex hex"
+}
+
+.hex {
+    text-align: center;
+    color: #2B283A;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 24px;
+    grid-area: 'hex';
+    align-self: center;
+}
