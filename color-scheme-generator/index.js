@@ -1,12 +1,10 @@
-// GET https://www.thecolorapi.com/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=html&mode=analogic&count=6
-
 const colorPicker = document.getElementById('color-picker')
 const btn = document.getElementById('btn')
 const select = document.getElementById('select')
 const colors = document.getElementById('colors')
 
 
-btn.addEventListener("click", function(e) {
+btn.addEventListener("click", function() {
     
     const hex = colorPicker.value.slice(1)
     const mode = select.value
