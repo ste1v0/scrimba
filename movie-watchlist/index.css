@@ -1,0 +1,87 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #1B1B1B;
+    color: white;
+    font-family: Inter, sans-serif;
+}
+
+header {
+    padding: 0 42px;
+    height: 25vh;
+    background: url('./img/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    height: 100%;
+}
+
+h1 {
+    font-size: 43px;
+    font-weight: 800;
+    line-height: 24x;
+}
+
+#my-watchlist {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+main {
+    margin-top: -2.5vh;
+    padding: 0 42px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+#form-bg {
+    width: 100%;
+    display: flex;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background: #2E2E2F;
+    padding: 9px 13px;
+}
+
+#search-img {
+    width: 20px;
+    height: 20px;
+    background: #2E2E2F;
+}
+
+#search-input {
+    width: 100%;
+    margin-left: 8px;
+    font-family: inherit;
+    border: 0;
+    background: #2E2E2F;
+    color: #A5A5A5;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+#search-btn {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    font-family: inherit;
+    background: #4B4B4B;
+    border: none;
+    padding: 9px 25px 9px 30px;
+    cursor: pointer;
+}
