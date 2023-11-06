@@ -51,7 +51,7 @@ form {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     background: #2E2E2F;
-    padding: 9px 13px;
+    padding: 1em 13px;
 }
 
 #search-img {
@@ -82,6 +82,6 @@ form {
     font-family: inherit;
     background: #4B4B4B;
     border: none;
-    padding: 9px 25px 9px 30px;
+    padding: 1em 25px 1em 30px;
     cursor: pointer;
 }
