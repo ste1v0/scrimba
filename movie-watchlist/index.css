@@ -7,8 +7,8 @@ html, body {
 }
 
 header {
-    padding: 0 42px;
-    height: 25vh;
+    padding: 0 44px;
+    height: 41vh;
     background: url('./img/bg.png');
     background-size: cover;
     background-position: center;
@@ -37,7 +37,7 @@ h1 {
 
 section {
     margin-top: -2.5vh;
-    padding: 0 42px;
+    padding: 0 44px;
 }
 
 form {
@@ -84,4 +84,27 @@ form {
     border: none;
     padding: 0.56rem 25px 0.56rem 30px;
     cursor: pointer;
+}
+
+main {
+    height: 59vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8.75px;
+}
+
+
+
+.explore-text {
+    margin: 0;
+    color: #2E2E2F;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.explore-pic {
+    width: 4.375rem;
 }
