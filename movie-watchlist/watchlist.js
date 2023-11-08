@@ -1,9 +1,8 @@
 const main = document.getElementById('main')
-const allKeys = Object.keys(localStorage)
 
 let result = ''
 
-if (allKeys) {
+if (localStorage.length > 0) {
     if (main.classList.contains('height')) {
         main.classList.remove('height')
     }
@@ -19,8 +18,10 @@ if (allKeys) {
             <p class="title">${parsed.Title} <img class="favorite" src="./img/favorite.svg"> <span class="rating">${parsed.imdbRating}</span></p>
             <p class="duration">${parsed.Runtime}</p>
             <p class="genres">${parsed.Genre}</p>
+            <div class="watchlist-container">
             <img data-id="${i}" class="add-icon" src="./img/remove.svg">
             <p data-id="${i}" class="add-watchlist-text">Remove</p>
+        </div>
             <p class="description">${parsed.Plot}</p>
         </div>
         <div class="hr">

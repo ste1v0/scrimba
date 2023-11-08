@@ -35,8 +35,10 @@ async function fetchDetails(movies) {
                 <p class="title">${data.Title} <img class="favorite" src="./img/favorite.svg"> <span class="rating">${data.imdbRating}</span></p>
                 <p class="duration">${data.Runtime}</p>
                 <p class="genres">${data.Genre}</p>
-                <img data-id="${index}" class="add-icon" src="./img/add.svg">
-                <p data-id="${index}" class="add-watchlist-text">Watchlist</p>
+                <div class="watchlist-container">
+                    <img data-id="${index}" class="add-icon" src="./img/add.svg">
+                    <p data-id="${index}" class="add-watchlist-text">Watchlist</p>
+                </div>
                 <p class="description">${data.Plot}</p>
             </div>
             <hr>
